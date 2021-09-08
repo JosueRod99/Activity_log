@@ -1,0 +1,271 @@
+:root {
+  --black: #2B3137;
+  --white: #FFFFFF;
+  --off-white: #F0F0F0;
+  --gray: #394047;
+  --light-gray: #6B7885;
+  --light-blue: #4BC6E9;
+  --lightest-gray: #BEC8D2;
+  --trans-blue: rgba(75, 198, 233, .1);
+  --faded: #F6FBFF;
+  --bg: var(--faded);
+  --component-bg: var(--black);
+  --component-subtle: var(--lightest-gray);
+  --component-color: var(--white);
+  --component-border: var(--gray);
+  --component-radius: 1rem;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'Inter UI', system-ui;
+  font-size: 1.6rem;
+  background: var(--bg);
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  height: 100%;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  background: transparent;
+  border: 0;
+}
+
+a {
+  color: inherit;
+}
+
+.sidebar {
+  background: var(--component-bg);
+  color: var(--component-color);
+  width: 100%;
+  max-width: 300px;
+  border-radius: var(--component-radius);
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.1), 0px 3px 6px rgba(0, 0, 0, 0.06);
+}
+.sidebar__profile {
+  margin-bottom: 2.5rem;
+}
+.sidebar__header, .sidebar__body {
+  padding: 2.1rem;
+}
+.sidebar__header {
+  border-bottom: 1px solid var(--component-border);
+}
+.sidebar--mini {
+  max-width: 73px;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+.sidebar--mini .menu__icon {
+  margin: 0;
+}
+.sidebar--mini .theme-btn {
+  width: 30px;
+  height: 30px;
+  border: 0;
+}
+.sidebar--mini .theme-btn__label {
+  display: none;
+}
+
+.profile {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+}
+.profile__avatar {
+  height: 55px;
+  width: 55px;
+  border-radius: 50%;
+  margin-right: 2rem;
+}
+.profile__name {
+  color: var(--component-subtle);
+ 
+  -webkit-animation: fade 300ms ease forwards;
+          animation: fade 300ms ease forwards;
+
+}
+
+.input {
+  width: 100%;
+  border: 2px solid var(--component-border);
+  border-radius: var(--component-radius);
+  padding: 1.5rem 2.5rem;
+  color: inherit;
+  background: rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 150ms ease;
+  transition: all 150ms ease;
+}
+.input:focus, .input:active {
+  outline: 0;
+  background: transparent;
+  box-shadow: 0px 0px 5px var(--light-blue);
+  -webkit-transition: all 150ms ease;
+  transition: all 150ms ease;
+}
+
+.menu__item {
+  cursor: pointer;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  border-radius: .5rem;
+  margin: 0 0 2rem 0;
+  box-shadow: 0px 0px 0px 1rem rgba(255, 255, 255, 0);
+  text-decoration: none;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+.menu__item:hover, .menu__item:focus {
+  color: inherit;
+  background: var(--trans-blue);
+  box-shadow: 0px 0px 0px 1rem var(--trans-blue);
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+.menu__item:hover .menu__icon, .menu__item:focus .menu__icon {
+  color: var(--light-blue);
+}
+.menu__item:hover .menu__title, .menu__item:focus .menu__title {
+  color: inherit;
+}
+.menu__icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 2rem;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  color: var(--light-gray);
+}
+.menu__title {
+  color: var(--component-subtle);
+  -webkit-animation: fade 300ms ease forwards;
+          animation: fade 300ms ease forwards;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.button {
+  padding: 1rem 1.5rem;
+  background: -webkit-gradient(linear, left bottom, left top, from(var(--black)), to(var(--gray)));
+  background: linear-gradient(to top, var(--black), var(--gray));
+  color: var(--white);
+  border-radius: .3rem;
+  cursor: pointer;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+}
+.button:hover {
+  opacity: .7;
+}
+.button:focus, .button:active {
+  outline: 0;
+}
+.button:focus {
+  outline: 4px solid var(--trans-blue);
+}
+.button--light {
+  background: -webkit-gradient(linear, left bottom, left top, from(var(--off-white)), to(var(--white)));
+  background: linear-gradient(to top, var(--off-white), var(--white));
+  color: var(--gray);
+}
+.button--primary {
+  background: var(--light-blue);
+  color: var(--white);
+}
+
+.buttons {
+  display: -webkit-box;
+  display: flex;
+  width: 100%;
+  max-width: 300px;
+  margin: 2rem 0 2rem;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+.buttons .button {
+  display: block;
+  width: 49%;
+}
+
+.theme-btn {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  border-radius: .5rem;
+  padding: .5rem 0;
+  border: 1px solid var(--component-border);
+  color: var(--light-blue);
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+.theme-btn:hover, .theme-btn:focus {
+  background: var(--trans-blue);
+  box-shadow: 0px 0px 0px 1rem var(--trans-blue);
+  -webkit-transition: all 100ms ease;
+  transition: all 100ms ease;
+}
+.theme-btn__label {
+  margin-left: 1rem;
+  -webkit-animation: fade 300ms ease forwards;
+          animation: fade 300ms ease forwards;
+}
+.theme-btn__icon {
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  -webkit-animation: fade 300ms ease forwards;
+          animation: fade 300ms ease forwards;
+}
